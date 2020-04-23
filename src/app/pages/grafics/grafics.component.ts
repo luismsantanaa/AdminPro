@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GraficDataService } from 'src/app/services/grafic-data.service';
+import { IGraficData } from 'src/app/interfaces/grafic-data.interface';
+
 
 @Component({
   selector: 'app-grafics',
@@ -7,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class GraficsComponent implements OnInit {
+
+  data: IGraficData[] = [];
+
+  constructor(public dataService: GraficDataService) { }
+
   graficos: any = {
     grafico1: {
       labels: ['Con Frijoles', 'Con Natilla', 'Con tocino'],
@@ -33,10 +41,7 @@ export class GraficsComponent implements OnInit {
       leyenda: '¿Le importa que le den gases?'
     },
   };
-  constructor() { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {  }
 
 }
