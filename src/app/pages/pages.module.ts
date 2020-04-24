@@ -15,6 +15,7 @@ import { PAGES_ROUTING } from './pages.routes';
 import { IncremeterComponent } from '../components/incremeter/incremeter.component';
 import { DonaGraficComponent } from '../components/grafic/dona-grafic/dona-grafic.component';
 import { GraficsComponent } from './grafics/grafics.component';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { GraficsComponent } from './grafics/grafics.component';
         ProgressComponent,
         IncremeterComponent,
         DonaGraficComponent,
-        GraficsComponent
+        GraficsComponent,
+        AccountSettingComponent
         ],
     exports: [
         PagesComponent,
