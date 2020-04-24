@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 // Modules
 import { PagesModule } from './pages/pages.module';
+import { ServicesModule } from './services/services.module';
 
 // Routes
 import { APP_ROUTES } from './app.routes';
@@ -13,23 +14,16 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './login/register.component';
 import { LoginComponent } from './login/login.component';
 
-// Services
-import { SettingsService } from './services/settings.service';
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent
-  ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     PagesModule,
     APP_ROUTES,
-    FormsModule
+    ServicesModule,
   ],
-  providers: [SettingsService],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

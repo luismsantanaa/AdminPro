@@ -3,13 +3,12 @@ import { JsonpInterceptor } from '@angular/common/http';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SettingsService {
-
   setting: ISetting = {
     themeUrl: './assets/css/colors/default-dark.css',
-    theme: 'default-dark'
+    theme: 'default-dark',
   };
 
   constructor(@Inject(DOCUMENT) private myDocument) {
@@ -17,24 +16,21 @@ export class SettingsService {
   }
 
   getSetting() {
-    console.log('getSetting');
-    if ( localStorage.getItem('settings') ) {
+    if (localStorage.getItem('settings')) {
       this.setting = JSON.parse(localStorage.getItem('settings'));
       this.loadTheme(this.setting.theme);
-    }else {
+    } else {
       this.loadTheme(this.setting.theme);
     }
   }
 
   saveSettings() {
     localStorage.setItem('settings', JSON.stringify(this.setting));
-    console.log('save Setting');
   }
 
   loadTheme(color: string) {
-
     const url = `./assets/css/colors/${color}.css`;
-console.log(url);
+
     this.myDocument.getElementById('myTheme').setAttribute('href', url);
 
     this.setting.theme = color;
@@ -42,7 +38,6 @@ console.log(url);
 
     this.saveSettings();
   }
-
 }
 
 interface ISetting {

@@ -5,8 +5,7 @@ import { MultiDataSet, Label } from 'ng2-charts';
 @Component({
   selector: 'app-dona-grafic',
   templateUrl: './dona-grafic.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class DonaGraficComponent implements OnInit {
   // tslint:disable-next-line: no-input-rename
@@ -17,18 +16,24 @@ export class DonaGraficComponent implements OnInit {
   @Input('gData') doughnutChartData: MultiDataSet;
   public doughnutChartType: ChartType = 'doughnut';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
+  public chartClicked({
+    event,
+    active,
+  }: {
+    event: MouseEvent;
+    active: {}[];
+  }): void {}
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-
+  public chartHovered({
+    event,
+    active,
+  }: {
+    event: MouseEvent;
+    active: {}[];
+  }): void {}
 }

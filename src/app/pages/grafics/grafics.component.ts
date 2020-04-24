@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GraficDataService } from 'src/app/services/grafic-data.service';
+import { GraficDataService } from 'src/app/services/Settings/shared/grafic-data.service';
 import { IGraficData } from 'src/app/interfaces/grafic-data.interface';
 
 
