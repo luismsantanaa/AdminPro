@@ -14,21 +14,18 @@
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
                         <li><a routerLink="/account-settings" routerLinkActive="active">Account Setting</a></li>
+                        <li><a routerLink="/login">Login</a></li>
                         <li><a href="javascript:void()">Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
-                <li class="nav-small-cap">PERSONAL</li>
-                <li *ngFor="let menu of sideBar.menu">
+                <li class="nav-small-cap">PRINCIPAL</li>
+                <li *ngFor="let menu of _sideBar.menu">
                     <a class="has-arrow waves-effect waves-dark" aria-expanded="false">
-                        <i [class]="menu.icono"></i><span class="hide-menu">{{menu.titulo}} <span class="label label-rouded label-themecolor pull-right">4</span></span>
+                        <i [class]="menu.icono"></i><span class="hide-menu"> {{ menu.titulo }} <span class="label label-rouded label-themecolor pull-right"> {{ menu.subMenu.length }}</span></span>
                     </a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a routerLink="/login">Login </a></li>
-                        <li><a href="#/dashboard">Dashboard</a></li>
-                        <li><a routerLink="/grafics">Progress</a></li>
-                        <li><a routerLink="/grafics">Grafics</a></li>
-                        <li><a routerLink="/account-settings">Settings</a></li>
+                    <ul aria-expanded="false" class="collapse" *ngFor="let subM of menu.subMenu; let i=index">
+                        <li><a [routerLink]="[subM.url]" routerLinkActive="active"><i [class]="subM.icono"></i><span> {{subM.titulo}}</span></a></li>
                     </ul>
                 </li>
             </ul>
