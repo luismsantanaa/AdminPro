@@ -16,6 +16,7 @@ import { IncremeterComponent } from '../components/incremeter/incremeter.compone
 import { DonaGraficComponent } from '../components/grafic/dona-grafic/dona-grafic.component';
 import { GraficsComponent } from './grafics/grafics.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
+import { PromesaComponent } from './promesa/promesa.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
         IncremeterComponent,
         DonaGraficComponent,
         GraficsComponent,
-        AccountSettingComponent
+        AccountSettingComponent,
+        PromesaComponent
         ],
     exports: [
         PagesComponent,
